@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.3)  10 JUL 2026 18:43
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.3)  10 JUL 2026 22:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -950,7 +950,7 @@ LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
 (Font)              scaled to size 5.99936pt on input line 44.
  [1
 
-] [2] (./思政实践报告.aux)
+] [2] [3] (./思政实践报告.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/07/14>
@@ -959,12 +959,12 @@ Package rerunfilecheck Info: File `思政实践报告.out' has not changed.
 (rerunfilecheck)             Checksum: 13A13B39D18963BFDBB2273A07C9B58E;300.
  ) 
 Here is how much of TeX's memory you used:
- 25719 strings out of 468168
- 575899 string characters out of 5433747
+ 25800 strings out of 468168
+ 581061 string characters out of 5433747
  1104168 words of memory out of 5000000
- 54176 multiletter control sequences out of 15000+600000
+ 54257 multiletter control sequences out of 15000+600000
  631951 words of font info for 91 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,6n,111p,3267b,929s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,6n,111p,3267b,931s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 思政实践报告.pdf (2 pages).
+Output written on 思政实践报告.pdf (3 pages).
