@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.3)  11 JUL 2026 08:44
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.3)  11 JUL 2026 08:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -956,13 +956,13 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `志愿服务.out' has not changed.
-(rerunfilecheck)             Checksum: E014CFFE28410319350DCC2B7694F0C4;294.
+(rerunfilecheck)             Checksum: B22C38ADB10FD3B76BA19736DEE6084D;262.
  ) 
 Here is how much of TeX's memory you used:
- 25716 strings out of 468168
- 575556 string characters out of 5433747
+ 25704 strings out of 468168
+ 574804 string characters out of 5433747
  1107164 words of memory out of 5000000
- 54173 multiletter control sequences out of 15000+600000
+ 54161 multiletter control sequences out of 15000+600000
  631951 words of font info for 91 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,6n,111p,3254b,929s stack positions out of 10000i,1000n,20000p,200000b,200000s
