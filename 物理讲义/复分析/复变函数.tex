@@ -15,9 +15,25 @@
 \pagestyle{plain}
 
 % ====== 数学宏包 ======
+\usepackage{amsthm}             % 定理环境
 \usepackage{mathtools}          % 必须放在 unicode-math 之前
 \usepackage{amsmath}            % 已被 mathtools 自动载入
 % \usepackage{amssymb}         % 已删除，与 unicode-math 冲突
+
+% ----- 定理环境设置 -----
+\theoremstyle{plain}
+\newtheorem{theorem}{定理}[chapter]
+\newtheorem{lemma}[theorem]{引理}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{example}{例}[chapter]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{注}
+
+% 汉化 proof 环境标题
+\renewcommand{\proofname}{证明}
 
 % ====== 三线表 + 数字对齐 ======
 \usepackage{booktabs}
@@ -51,6 +67,22 @@
 
 \section{小节}
 正文内容……
+
+\begin{definition}[戴德金分割]
+    设 ...
+\end{definition}
+
+\begin{theorem}[实数的完备性]
+    实数集 ...
+\end{theorem}
+
+\begin{proof}
+    证明过程 ...
+\end{proof}
+
+\begin{remark}
+    这个定理是分析学的基础。
+\end{remark}
 
 % 参考文献、附录等可后续添加
 
