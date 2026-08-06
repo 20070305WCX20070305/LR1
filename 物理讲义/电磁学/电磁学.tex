@@ -1,0 +1,57 @@
+% !TEX program = xelatex
+
+\documentclass[11pt,a4paper,oneside]{ctexbook}  % 改为书籍类，单面排版
+
+% ====== 字体 ======
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+
+% ====== 页面设置 ======
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\pagestyle{plain}
+
+% ====== 数学宏包 ======
+\usepackage{mathtools}          % 必须放在 unicode-math 之前
+\usepackage{amsmath}            % 已被 mathtools 自动载入
+% \usepackage{amssymb}         % 已删除，与 unicode-math 冲突
+
+% ====== 三线表 + 数字对齐 ======
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{enumitem}
+
+% ====== 交叉引用与超链接 ======
+\usepackage[colorlinks=true,
+            linkcolor=blue,
+            citecolor=green,
+            urlcolor=cyan]{hyperref}
+\usepackage[noabbrev,nameinlink]{cleveref}  % 必须最后加载
+
+% ====== 自定义命令 ======
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\source}[1]{\par \hfill ——#1}
+
+% ====== 文档内容 ======
+\begin{document}
+
+% 书籍类可选前导部分（若需要可取消注释）
+% \frontmatter
+% \tableofcontents
+% \listoffigures
+
+% \mainmatter
+
+% 示例章节（书籍类支持 \chapter）
+\chapter{引言}
+这是书籍类文档的示例内容。
+
+\section{小节}
+正文内容……
+
+% 参考文献、附录等可后续添加
+
+\end{document}
