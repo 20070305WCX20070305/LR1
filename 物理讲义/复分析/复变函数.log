@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.3)  7 AUG 2026 10:13
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.3)  7 AUG 2026 10:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -997,14 +997,8 @@ L3 programming layer <2022/07/14>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-Package rerunfilecheck Warning: File `复变函数.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `复变函数.out':
-(rerunfilecheck)             Before: 846785DFF20E6BC649D7B271302B6C1A;1240
-(rerunfilecheck)             After:  1E12BA70CC79E522A0D6A022985713C5;1241.
+Package rerunfilecheck Info: File `复变函数.out' has not changed.
+(rerunfilecheck)             Checksum: 1E12BA70CC79E522A0D6A022985713C5;1241.
  ) 
 Here is how much of TeX's memory you used:
  26108 strings out of 468168
