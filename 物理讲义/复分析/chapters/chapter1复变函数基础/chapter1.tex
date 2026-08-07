@@ -113,9 +113,9 @@ w = f(z) = u(x, y) + \mathrm{i} v(x, y)
 定义的边界 \(G\) 的边界点集记为 \(\partial G\)（有时也记为 \(C\)），区域 \(G\) 加上边界点称为区域的闭包，记为 \(\overline{G} = G \cup \partial G\)。
 \end{remark}
 
-\section{解析函数}
+\chapter{解析函数}
 
-\subsection{极限与连续}
+\section{极限与连续}
 
 \begin{definition}[复变函数的极限]
 设函数 \(f(z)\) 在 \(z_0\) 点的去心邻域内有定义。若存在常数 \(A\)，使得对任意给定的 \(\varepsilon > 0\)，存在 \(\delta > 0\)，当 \(0 < |z - z_0| < \delta\) 时，恒有 \(|f(z) - A| < \varepsilon\)，则称 \(z \to z_0\) 时 \(f(z)\) 的极限为 \(A\)，记为：
@@ -132,7 +132,7 @@ w = f(z) = u(x, y) + \mathrm{i} v(x, y)
 复变函数极限和连续的定义，在形式上与实变函数完全一致。但在工程应用中需要注意，在复平面内，\(z \to z_0\) 必须是以任意方式、沿任意路径趋于 \(z_0\) 都满足条件，这比一元实变函数中仅沿数轴一个方向趋近要求更为严格。若函数在有界闭区域 \(\overline{G}\) 内连续，则必然达到其上下确界并具备一致连续性。
 \end{remark}
 
-\subsection{导数与微分}
+\section{导数与微分}
 
 \begin{definition}[可导与微分]
 设函数 \(w = f(z)\) 是区域 \(G\) 内的单值函数，如果在 \(G\) 内的某点 \(z_0\)，极限
@@ -152,7 +152,7 @@ f'(z_0) = \lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z}
 \end{enumerate}
 \end{remark}
 
-\subsection{解析函数与柯西-黎曼方程}
+\section{解析函数与柯西-黎曼方程}
 
 \begin{definition}[解析函数]
 在区域 \(G\) 内每一点都可导的函数，称为 \(G\) 内的解析函数。例如，\(z^2\) 和 \(e^z\) 都是全平面上的解析函数。解析性是复变函数核心的研究对象。
@@ -171,7 +171,7 @@ f'(z_0) = \lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z}
 例如，已知实部 \(u(x,y) = x^2 - y^2\)，通过线积分求解 C-R 方程可求得虚部 \(v(x,y) = 2xy\)，进而得到解析函数 \(f(z) = z^2\)。
 \end{remark}
 
-\subsection{调和函数与无穷远点}
+\section{调和函数与无穷远点}
 
 \begin{definition}[调和函数]
 若一个二元实函数 \(u(x,y)\) 在某区域内存在二阶连续偏导数，且满足二维拉普拉斯方程：
@@ -193,7 +193,7 @@ f'(z_0) = \lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z}
 函数在某一点是否解析，常常与其所在区域及邻域有关。为了研究复变函数在无穷远处的性质，我们需要引入无穷远点。通过作变换 \(z = \frac{1}{t}\)，可以将无穷远点 \(z = \infty\) 映射到 \(t = 0\) 点。因此，如果在变换后的 \(t = 0\) 处解析，则称原函数在无穷远点解析。如果在某点的任意邻域内均不存在解析点，则该点被称为函数的奇点。
 \end{remark}
 
-\subsection{保角变换}
+\section{保角变换}
 
 \begin{definition}[保角变换]
 复数解析函数 \(w = f(z)\) 代表了一个变换或映射。若在 \(z\) 平面的某个点 \(z_0\) 处满足 \(f'(z_0) \neq 0\)，则该映射在 \(z_0\) 点具有保角性。此时，称解析函数代表的映射为保角变换（或保角映射）。
@@ -266,7 +266,7 @@ f'(z_0) = \lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z}
 \end{align*}
 \end{proof}
 
-\subsection{多值函数与黎曼面}
+\section{多值函数与黎曼面}
 
 \begin{definition}[多值函数]
 在复变函数中存在一类函数，在区域 \(G \subset \mathbb{C}\) 中，对于复数 \(z \in G\)，有多个复数 \(w\) 与之对应，称此类函数为多值函数。多值函数通常产生于数学运算的逆过程，例如求平方根、求对数等。

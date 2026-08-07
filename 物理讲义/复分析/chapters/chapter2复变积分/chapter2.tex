@@ -1,2 +1,266 @@
 \chapter{复变积分}
 
+\section{复变积分及其性质}
+
+\begin{definition}[复变积分]
+设函数 \(f(z)\) 在曲线 \(C\) 上有定义，将其分割为 \(n\) 段，设分点为 \(z_0=A, z_1, \cdots, z_n=B\)，\(\zeta_k\) 为 \(z_{k-1}\) 到 \(z_k\) 上的任意一点。当 \(n \to \infty\) 且 \(\max|\Delta z_k| \to 0\) 时，如果此和式的极限存在，且极限值与 \(\zeta_k\) 的选取无关，则称此极限值为函数 \(f(z)\) 沿曲线 \(C\) 的积分：
+\[
+\int_C f(z) dz = \lim_{\max|\Delta z_k| \to 0} \sum_{k=1}^n f(\zeta_k) \Delta z_k.
+\]
+\end{definition}
+
+\begin{definition}[复变积分与实变积分的关系]
+一个复变积分实际上是两个实变线积分的有序组合：
+\[
+\int_C f(z) dz = \int_C (u dx - v dy) + i \int_C (v dx + u dy).
+\]
+\end{definition}
+
+\begin{theorem}[复变积分的线性与可加性]
+    复变积分具有线性与可加性，即：
+
+\begin{enumerate}
+    \item 如果积分路径 \(C\) 可分解为若干个分段光滑曲线 \(C_1, C_2, \cdots, C_n\)，则 
+    \[
+    \int_C f(z) dz = \int_{C_1} f(z) dz + \int_{C_2} f(z) dz + \cdots + \int_{C_n} f(z) dz;
+    \]
+    \item 若 \(C^-\) 表示 \(C\) 的逆向，则 \(\int_C f(z) dz = - \int_{C^-} f(z) dz\)；
+    \item \(\int_C a f(z) dz = a \int_C f(z) dz\) （\(a\) 为复常数）；
+    \item \(|\int_C f(z) dz| \le \int_C |f(z)| |dz| \le M l\) （其中 \(M\) 为 \(|f(z)|\) 在 \(C\) 上的上界，\(l\) 为 \(C\) 的长度）。
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[不定积分的解析性]
+如果函数 \(f(z)\) 在有界单连通区域 \(G\) 内解析，则 \(f(z)\) 的不定积分 \(F(z) = \int_{z_0}^z f(\zeta) d\zeta\)（其中 \(z \in G\)）也在 \(G\) 内解析，并且：
+\[
+F'(z) = \frac{d}{dz} \int_{z_0}^z f(\zeta) d\zeta = f(z), \quad z \in G.
+\]
+\end{theorem}
+
+\begin{definition}[原函数]
+如果函数 \(\Phi(z)\) 的导数 \(\Phi'(z) = f(z)\)，则称 \(\Phi(z)\) 为 \(f(z)\) 的原函数。对于给定的函数 \(f(z)\)，其原函数并不唯一，任意两个原函数相差一个常数，即：
+\[
+\Phi_1(z) - \Phi_2(z) = C.
+\]
+\end{definition}
+
+
+% ===================== Section 2 =====================
+\section{Cauchy 积分定理}
+
+\begin{theorem}[Cauchy 定理（有界单连通区域）]
+设有界区域 \(G\) 的边界 \(C\) 为分段光滑曲线。如果函数 \(f(z)\) 在闭区域 \(\overline{G}\) 中解析，则沿边界 \(C\) 的正向积分满足：
+\[
+\oint_C f(z) dz = 0.
+\]
+\end{theorem}
+
+\fbox{\parbox{0.9\linewidth}{
+\begin{proof}
+    由于：
+    \begin{equation*}
+        \oint_C f(z) dz = \oint_C (u + iv)(dx + i dy) = \oint_C (u dx - v dy) + i \oint_C (v dx + u dy)
+    \end{equation*}
+
+    根据解析函数的Cauchy-Riemann条件以及二维曲线积分格林公式可得：
+    \[
+    \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}
+    \]
+    可以得到：
+    \[
+    \oint_C (u dx - v dy) = 0, \quad \oint_C (v dx + u dy) = 0
+    \]
+    因此：
+    \[
+    \oint_C f(z) dz = 0.
+    \]
+\end{proof}
+}}
+
+\begin{theorem}[Cauchy 定理（有界多连通区域）]
+设 \(f(z)\) 是在多连通区域 \(G\) 中的解析函数，则：
+\[
+\oint_C f(z) dz = \sum_{k=1}^n \oint_{C_k^-} f(z) dz.
+\]
+\end{theorem}
+
+\fbox{\parbox{0.9\textwidth}{
+    \begin{proof}
+        设 \(G\) 为多连通区域，\(C\) 为其最外面的边界，\(C_1, C_2, \ldots, C_n\) 为 \(G\) 内的各个孔的边界。根据 Cauchy 定理（有界单连通区域），对于每个孔的边界 \(C_k\)：
+        \[
+        \oint_{C} f(z) \mathrm{d}z + \oint_{C_k^+} f(z) \mathrm{d}z = 0.
+        \]
+        因此：
+        \[
+        \oint_C f(z) dz = \sum_{k=1}^n \oint_{C_k^-} f(z) dz.
+        \]
+    \end{proof}
+}}
+
+% ===================== Section 7 =====================
+\section{两个常用的引理}
+
+\begin{lemma}[小圆弧引理]
+设函数 \(f(z)\) 在 \(z = a\) 点的空心邻域内连续，并且当 \(|z-a| \to 0\) 时，\((z-a) f(z)\) 一致趋近于 \(k\)，则：
+\[
+\lim_{\delta \to 0} \int_{C_\delta} f(z) dz = i k (\theta_2 - \theta_1),
+\]
+其中 \(C_\delta\) 是以 \(z=a\) 为圆心，\(\delta\) 为半径，张角为 \(\theta_2-\theta_1\) 的圆弧。
+\end{lemma}
+
+\fbox{\parbox{0.9\textwidth}{
+    \begin{proof}
+        对$\forall\varepsilon>0,\,\exists\delta>0$使得当$0<|z-a|<\delta$时，有$|(z-a)f(z)-k|<\varepsilon$。因此：
+        \begin{align*}
+            \left|\int_{C_\delta} f(z) dz - i k (\theta_2 - \theta_1)\right| &= \int_{C_\delta} \left((z-a)f(z) - k\right) dz\\
+            &\le |\frac{(z-a)f(z) - k}{(z-a)}|\cdot|dz|
+        \end{align*}
+        因此对于任意的$\varepsilon>0$，$\exists\delta$，有：
+        \begin{equation*}
+            \left|\int_{C_\delta} f(z) dz - i k (\theta_2 - \theta_1)\right| \le \varepsilon(\theta_2 - \theta_1) \to 0.
+        \end{equation*}
+        因此小圆弧引理得证。
+    \end{proof}
+}}
+
+\begin{lemma}[大圆弧引理]
+设 \(f(z)\) 在 \(\infty\) 点的邻域内连续，当 \(z \to \infty\) 时，\(z f(z)\) 一致趋近于 \(K\)，则：
+\[
+\lim_{R \to \infty} \int_{C_R} f(z) dz = i K (\theta_2 - \theta_1),
+\]
+其中 \(C_R\) 是以原点为圆心，\(R\) 为半径，张角为 \(\theta_2-\theta_1\) 的圆弧。
+\end{lemma}
+
+\begin{remark}
+    证明方法与小圆弧引理相同，此处省略。
+\end{remark}
+
+
+% ===================== Section 4 =====================
+\section{Cauchy 积分公式}
+
+\begin{theorem}[有界区域的 Cauchy 积分公式]
+设 \(f(z)\) 是有界闭区域 \(\overline{G}\) 中的单值解析函数，\(G\) 的边界 \(C\) 为分段光滑曲线，\(a\) 为 \(G\) 内一点，则：
+\[
+f(a) = \frac{1}{2\pi i} \oint_C \frac{f(z)}{z - a} dz.
+\]
+\end{theorem}
+
+\begin{remark}
+    应用小圆弧引理以及连续变形定理可证明 Cauchy 积分公式。
+\end{remark}
+
+\begin{theorem}[解析函数的均值定理]
+设 \(f(z)\) 在圆内解析，\(z=a\) 为圆心、\(R\) 为半径的圆周，则：
+\[
+f(a) = \frac{1}{2\pi} \int_0^{2\pi} f(a + R e^{i\theta}) d\theta.
+\]
+\end{theorem}
+
+\begin{remark}
+    应用Cauchy积分公式可得解析函数的均值定理。
+\end{remark}
+
+\begin{theorem}[无界区域的 Cauchy 积分公式]
+如果 \(f(z)\) 在简单闭合围道 \(C\) 上及 \(C\) 外解析，且当 \(z \to \infty\) 时 \(f(z)\) 趋于 \(0\)，则对于区域外一点 \(a\)，有：
+\[
+f(a) = \frac{1}{2\pi i} \oint_C \frac{f(z)}{z-a} dz,
+\]
+其中积分路径为顺时针方向。
+\end{theorem}
+
+\begin{remark}
+    做围道$C_{\infty}$，在两个围道构成的复联通区域内使用 Cauchy 积分公式，对于$C_{\infty}$
+    使用大圆弧引理即可证明。
+\end{remark}
+
+
+% ===================== Section 5 =====================
+\section{Cauchy 型积分}
+
+\begin{definition}[Cauchy 型积分]
+设函数 \(\phi(\zeta)\) 在分段光滑的（闭合或不闭合）曲线 \(C\) 上连续，\(z\) 为 \(C\) 外一点，则积分：
+\[
+f(z) = \frac{1}{2\pi i} \oint_C \frac{\phi(\zeta)}{\zeta - z} d\zeta
+\]
+称为 Cauchy 型积分。
+\end{definition}
+
+\begin{theorem}[Cauchy 型积分的导数]
+Cauchy 型积分 \(f(z)\) 是 \(z\) 的解析函数，且其任意 \(p\) 阶导数可通过积分号下求导得到，即：
+\[
+f^{(p)}(z) = \frac{p!}{2\pi i} \oint_C \frac{\phi(\zeta)}{(\zeta - z)^{p+1}} d\zeta.
+\]
+\end{theorem}
+
+
+% ===================== Section 3 =====================
+\section{解析函数的高阶导数公式及推论}
+
+\begin{theorem}[解析函数的高阶导数公式]
+如果 \(f(z)\) 在有界闭区域 \(\overline{G}\) 中解析，则在 \(G\) 内 \(f(z)\) 的任何阶导数 \(f^{(n)}(z)\) 均存在，并且：
+\[
+f^{(n)}(z) = \frac{n!}{2\pi i} \oint_C \frac{f(\zeta)}{(\zeta - z)^{n+1}} d\zeta,
+\]
+其中 \(C\) 是 \(\overline{G}\) 的正向边界，\(z\) 为 \(G\) 内任意一点。
+\end{theorem}
+
+\begin{theorem}[Morera 定理]
+设函数 \(f(z)\) 在区域 \(\overline{G}\) 中连续，如果对于 \(\overline{G}\) 中的任何闭合围道 \(C\)，都有 \(\oint_C f(z) dz = 0\)，则 \(f(z)\) 在 \(G\) 内解析。
+\end{theorem}
+
+\begin{theorem}[Cauchy 不等式]
+设函数 \(f(z)\) 在闭区域 \(\overline{G}\) 中解析，在边界 \(C\) 上连续，\(|f(z)|\) 在边界 \(C\) 上的上确界为 \(M\)，则：
+\[
+|f^{(n)}(z)| \le \frac{n!}{2\pi} \oint_C \frac{|f(\zeta)|}{|\zeta - z|^{n+1}} |d\zeta| \le \frac{n! M l}{2\pi d^{n+1}},
+\]
+其中 \(l\) 是边界 \(C\) 的长度，\(d\) 是 \(z\) 点到边界的最短距离。特别地，当 \(C\) 是以 \(z\) 为圆心、\(R\) 为半径的圆周时：
+\[
+|f^{(n)}(z)| \le \frac{n!M}{R^n}.
+\]
+\end{theorem}
+
+\begin{theorem}[最大模原理]
+若 \(f(z)\) 在闭区域 \(\overline{G}\) 中解析，则模 \(|f(z)|\) 的最大值在 \(G\) 的边界 \(C\) 上。
+\end{theorem}
+
+\begin{theorem}[Liouville 定理]
+如果 \(f(z)\) 在全平面解析，且当 \(z \to \infty\) 时 \(|f(z)|\) 有界，则 \(f(z)\) 必为常数。
+\end{theorem}
+
+
+
+% ===================== Section 6 =====================
+\section{Poisson 公式}
+
+\begin{theorem}[上半平面的 Poisson 公式]
+如果 \(f(z)\) 在上半平面解析，即当 \(z \to \infty\) 时 \(f(z)\) 趋于 \(0\)，则有：
+\[
+f(z) = \frac{1}{2\pi i} \int_{-\infty}^{\infty} \frac{f(\xi)}{\xi - z} d\xi.
+\]
+\end{theorem}
+
+\begin{theorem}[上半平面的 Poisson 公式（实虚部形式）]
+由 Poisson 公式可知其实部和虚部分别为：
+\[
+u(x, y) = \frac{1}{\pi} \int_{-\infty}^{\infty} \frac{y u(\xi, 0)}{(\xi - x)^2 + y^2} d\xi, \quad
+v(x, y) = \frac{1}{\pi} \int_{-\infty}^{\infty} \frac{y v(\xi, 0)}{(\xi - x)^2 + y^2} d\xi.
+\]
+\end{theorem}
+
+\begin{theorem}[圆内的 Poisson 公式]
+设 \(f(z)\) 在圆 \(|z| = a\) 内解析，\(z = r e^{i\phi}\)，则有：
+\[
+f(z) = \frac{1}{2\pi} \int_0^{2\pi} \frac{a^2 - r^2}{a^2 - 2ar\cos(\theta - \phi) + r^2} f(a e^{i\theta}) d\theta.
+\]
+\end{theorem}
+
+\begin{theorem}[圆内的 Poisson 公式（实虚部形式）]
+设 \(f(z) = u(r,\theta) + i v(r,\theta)\)，其实部和虚部分别满足：
+\[
+u(r,\theta) = \frac{1}{2\pi} \int_0^{2\pi} \frac{a^2 - r^2}{a^2 - 2ar\cos(\theta - \phi) + r^2} u(a,\theta) d\theta,
+\]
+\[
+v(r,\theta) = \frac{1}{2\pi} \int_0^{2\pi} \frac{a^2 - r^2}{a^2 - 2ar\cos(\theta - \phi) + r^2} v(a,\theta) d\theta.
+\]
+\end{theorem}

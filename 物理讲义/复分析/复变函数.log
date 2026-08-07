@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.3)  7 AUG 2026 10:19
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.3)  7 AUG 2026 11:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -840,7 +840,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: xetex.def on input line 149.
  (d:/latex/texlive/2026/texmf-dist/tex/latex/graphics-def/xetex.def
 File: xetex.def 2025/11/01 v5.0p Graphics/color driver for xetex
-) (d:/latex/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (./复变函数.aux (./chapters/PrefaceChapter/preface.aux) (./chapters/chapter1复变函数基础/chapter1.aux))
+) (d:/latex/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (./复变函数.aux (./chapters/PrefaceChapter/preface.aux) (./chapters/chapter1复变函数基础/chapter1.aux) (./chapters/chapter2复变积分/chapter2.aux))
 \openout1 = `复变函数.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
@@ -952,25 +952,57 @@ Package hyperref Info: Link coloring ON on input line 61.
 \@outlinefile=\write3
 \openout3 = `复变函数.out'.
 
- (./复变函数.toc
+\openout2 = `chapters/PrefaceChapter/preface.aux'.
+
+ (./chapters/PrefaceChapter/preface.tex
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "KaiTi/BI" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "KaiTi/B" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "KaiTi/I" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'KaiTi(0)' created for font 'KaiTi' with
+(fontspec)             options [Script={CJK}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"KaiTi/OT:script=hani;language=dflt;"
+
 LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 10.95116pt on input line 3.
+(Font)              scaled to size 10.95116pt on input line 8.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 7.6658pt on input line 3.
+(Font)              scaled to size 7.6658pt on input line 8.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 5.47559pt on input line 3.
+(Font)              scaled to size 5.47559pt on input line 8.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 3.
+(Font)              scaled to size 10.94882pt on input line 8.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
-(Font)              scaled to size 7.66417pt on input line 3.
+(Font)              scaled to size 7.66417pt on input line 8.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
-(Font)              scaled to size 5.47441pt on input line 3.
-)
+(Font)              scaled to size 5.47441pt on input line 8.
+) [1
+
+
+
+
+] (./复变函数.toc)
 \tf@toc=\write4
 \openout4 = `复变函数.toc'.
 
  [2
-
 
 
 
@@ -984,11 +1016,25 @@ LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
 
 
 ] [2]
+第二章
+[3
+
+]
 
 LaTeX Font Warning: Font shape `TU/SimSun(0)/b/it' undefined
 (Font)              using `TU/SimSun(0)/b/n' instead on input line 166.
 
-[3] [4] [5]) [6] (./复变函数.aux (./chapters/PrefaceChapter/preface.aux) (./chapters/chapter1复变函数基础/chapter1.aux))
+[4] [5]) [6]
+\openout2 = `chapters/chapter2复变积分/chapter2.aux'.
+
+ (./chapters/chapter2复变积分/chapter2.tex
+第三章
+[7
+
+
+
+
+] [8] [9] [10]) [11] (./复变函数.aux (./chapters/PrefaceChapter/preface.aux) (./chapters/chapter1复变函数基础/chapter1.aux) (./chapters/chapter2复变积分/chapter2.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/07/14>
@@ -998,15 +1044,15 @@ L3 programming layer <2022/07/14>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `复变函数.out' has not changed.
-(rerunfilecheck)             Checksum: 1E12BA70CC79E522A0D6A022985713C5;1241.
+(rerunfilecheck)             Checksum: AE68E93A13E13BD46FE9DF2AE083D422;2202.
  ) 
 Here is how much of TeX's memory you used:
- 26108 strings out of 468168
- 588966 string characters out of 5433747
+ 26247 strings out of 468168
+ 596776 string characters out of 5433747
  1101131 words of memory out of 5000000
- 54536 multiletter control sequences out of 15000+600000
- 631976 words of font info for 101 fonts, out of 8000000 for 9000
+ 54664 multiletter control sequences out of 15000+600000
+ 631968 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,10n,111p,3258b,1054s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,12n,111p,3258b,1058s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 复变函数.pdf (7 pages).
+Output written on 复变函数.pdf (13 pages).
