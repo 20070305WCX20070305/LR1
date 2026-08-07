@@ -52,7 +52,10 @@
 \newcommand{\source}[1]{\par \hfill ——#1}
 
 % ====== 快速编译 ======
-% \includeonly{path1/chapter1, path2/chapter2}
+\includeonly{chapters/chapter1复变函数基础/chapter1}  % 只编译指定章节，方便调试
+
+% ====== 目录深度 ======
+\setcounter{tocdepth}{2}  % 目录深度为2，显示到小节（section）
 
 % ====== 文档内容 ======
 \begin{document}
@@ -65,6 +68,7 @@
 
 % ---------- 第二部分：正文主体（编号章节） ----------
 \mainmatter
+\include{chapters/chapter1复变函数基础/chapter1}
 
 
 % ---------- 第三部分：后置内容（附录等，不编号章节） ----------

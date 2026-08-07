@@ -1,4 +1,312 @@
 \chapter{复变函数基础}
-\begin{equation}
-    f(z) = u(x, y) + iv(x, y)
-\end{equation}
+
+\section{复数序列与极限}
+
+\begin{definition}[复数序列]
+    按照一定顺序排列的无穷多个复数 $z_1, z_2, z_3, \ldots$ 称为复数序列，记为 $\{z_n\}$。
+\end{definition}
+
+\begin{definition}[聚点(极限点)]
+    对于给定序列$\{z_n\}$，若存在复数$z_0$，使得对任意$\varepsilon>0$，存在无穷多的$n$，有$|z_n-z_0|<\varepsilon$，则称$z_0$为序列$\{z_n\}$的聚点(极限点)。
+\end{definition}
+
+\begin{definition}[上极限(下极限)]
+    对于实数序列的聚点，数值最大的称为实数序列的上极限，数值最小的称为实数序列的下极限。
+\end{definition}
+
+\begin{definition}[有界性]
+    对于序列$\{z_n\}$，如果存在一个常数$M>0$，使得对任意的$n$都有$|z_n|<M$，则称序列$\{z_n\}$是有界的。否则是无界的
+\end{definition}
+
+\begin{remark}
+    并非严谨定义，只是陈述对于概念的直观理解
+\end{remark}
+
+\begin{definition}[数列的极限]
+设 \(\{z_n\}\) 为复数列，\(z_0\) 为一复常数。如果对任意给定的 \(\varepsilon > 0\)，存在正整数 \(N = N(\varepsilon)\)，使得当 \(n > N\) 时，恒有：
+\[
+|z_n - z_0| < \varepsilon
+\]
+则称复数列 \(\{z_n\}\) 收敛于 \(z_0\)，记为 \(\lim_{n \to \infty} z_n = z_0\)。否则称该数列发散。
+\end{definition}
+
+
+\begin{theorem}[柯西收敛准则]
+复数列 \(\{z_n\}\) 收敛的充分必要条件是：对任意给定的 \(\varepsilon > 0\)，存在正整数 \(N = N(\varepsilon)\)，使得当 \(n > N\) 且 \(p\) 为任意正整数时，均有：
+\[
+|z_{n+p} - z_n| < \varepsilon
+\]
+\end{theorem}
+\begin{remark}
+在实际工程计算中，柯西准则非常有用，因为它让我们只需判断数列“自身各项的间距”是否趋于零，而无需事先知道极限具体等于多少，就能判定是否收敛。
+\end{remark}
+
+\begin{theorem}[波尔查诺-魏尔斯特拉斯定理]
+在复平面上，一个有界序列至少包含一个聚点。
+\end{theorem}
+\begin{remark}
+该定理在物理中常表示为：在一个有界的相空间或物理区域内，任何无穷多状态点的序列，必然会在某些特定状态附近无限次出现。
+\end{remark}
+
+\section{无穷远点与扩充复平面}
+
+\begin{definition}[无穷远点与扩充复平面]
+对于无界序列 \(\{z_n\}\)，若对任意大的 \(M > 0\)，总有无穷多个 \(z_n\) 满足 \(|z_n| > M\)，我们可以想象它们会聚于“无穷远处”，记为 \(\infty\)。
+复平面 \(\mathbb{C}\) 加上无穷远点 \(\infty\) 后，称为扩充复平面，记作 \(\overline{\mathbb{C}}\)。即：
+\[
+\overline{\mathbb{C}} = \mathbb{C} \cup \{\infty\}
+\]
+\end{definition}
+
+\begin{definition}[复球面 / 黎曼球面]
+为了直观地表现无穷远点，我们可以引入复球面（黎曼球面）。过复平面 \(\mathbb{C}\) 的原点作一直径为 \(1\) 的球面，球与复平面相切于点 \(S\)（南极）。过南极 \(S\) 的直径的另一端称为北极 \(N\)。
+对于扩充复平面上的点 \(z\)，将它和北极 \(N\) 相连，连线与球面必有且只有一个交点。这样，就建立了复球面上各点与扩充复平面上各点的一一对应关系。
+\end{definition}
+
+\begin{remark}
+在物理与工程应用中，黎曼球面常用于将无限区域（如天线辐射的远场区）映射到有限的球面上进行研究。通过映射 \(z = \frac{1}{t}\)，我们将无穷远点 \(z = \infty\) 映射为 \(t = 0\) 点，从而使得原本在无穷远处的困难问题转化为在原点的局部问题来分析。
+\end{remark}
+
+\section{区域与复变函数}
+
+\begin{definition}[复变函数]
+设区域 \(G \subset \mathbb{C}\)。如果对于区域 \(G\) 内的每一个复数 \(z\)，都有唯一的复数 \(w\) 与之对应，则称 \(w\) 是 \(z\) 的复变函数，记为：
+\[
+w = f(z), \quad z \in G
+\]
+其中 \(z\) 是函数 \(f\) 的自变量，区域 \(G\) 称为函数 \(f\) 的定义域。
+因为 \(z = x + \mathrm{i}y\)，\(w = u + \mathrm{i}v\)，所以复变函数实质上等价于两个二维实变函数：
+\[
+w = f(z) = u(x, y) + \mathrm{i} v(x, y)
+\]
+\end{definition}
+
+\begin{definition}[区域]
+复平面上的点集 \(G\) 如果同时满足以下两个条件，则称为区域：
+\begin{enumerate}
+    \item 全部由内点组成（即存在正数 \(\delta\)，使以任意点 \(z \in G\) 为圆心、\(\delta\) 为半径的圆 \(U(z, \delta)\) 全部包含于点集 \(G\) 内）；
+    \item 具有连通性（即点集中任意两点都可以用一条完全位于该点集内的折线连接起来）。
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[单连域与多连域]
+根据连通性质的差异，区域可以分为：
+\begin{itemize}
+    \item \textbf{单连通区域}：在区域内作任何简单闭合围道（自身不相交的闭合曲线），围道内的点都属于该区域。
+    \item \textbf{多连通区域}：不是单连通区域的区域，也称为复连通区域。
+\end{itemize}
+\end{definition}
+
+\begin{remark}
+在物理电磁场或流体力学问题中，单连通域（如全平面）和多连通域（如包含孔洞的区域）的处理方式有很大区别，特别是涉及柯西积分定理时。区域的边界 \(C\) 具有一定的方向性，一般规定沿边界行走时，区域内部保持在左侧，这个方向称为正方向。对于环形区域 \(R_1 < |z| < R_2\)，外边界取逆时针方向，内边界取顺时针方向。
+\end{remark}
+
+\begin{definition}[有界区域与无界区域]
+对于区域 \(G\)，如果存在一个常数 \(M > 0\)，使得对于任意 \(z \in G\)，都有：
+\[
+|z| < M
+\]
+则称区域 \(G\) 为有界区域。反之，若这样的常数 \(M\) 不存在，则称区域 \(G\) 为无界区域。
+\end{definition}
+
+\begin{remark}
+定义的边界 \(G\) 的边界点集记为 \(\partial G\)（有时也记为 \(C\)），区域 \(G\) 加上边界点称为区域的闭包，记为 \(\overline{G} = G \cup \partial G\)。
+\end{remark}
+
+\section{解析函数}
+
+\subsection{极限与连续}
+
+\begin{definition}[复变函数的极限]
+设函数 \(f(z)\) 在 \(z_0\) 点的去心邻域内有定义。若存在常数 \(A\)，使得对任意给定的 \(\varepsilon > 0\)，存在 \(\delta > 0\)，当 \(0 < |z - z_0| < \delta\) 时，恒有 \(|f(z) - A| < \varepsilon\)，则称 \(z \to z_0\) 时 \(f(z)\) 的极限为 \(A\)，记为：
+\[
+\lim_{z \to z_0} f(z) = A
+\]
+\end{definition}
+
+\begin{definition}[连续性]
+若函数 \(f(z)\) 在 \(z_0\) 点及其邻域内有定义，且极限值等于该点的函数值，即 \(\lim_{z \to z_0} f(z) = f(z_0)\)，则称 \(f(z)\) 在 \(z_0\) 点连续。
+\end{definition}
+
+\begin{remark}
+复变函数极限和连续的定义，在形式上与实变函数完全一致。但在工程应用中需要注意，在复平面内，\(z \to z_0\) 必须是以任意方式、沿任意路径趋于 \(z_0\) 都满足条件，这比一元实变函数中仅沿数轴一个方向趋近要求更为严格。若函数在有界闭区域 \(\overline{G}\) 内连续，则必然达到其上下确界并具备一致连续性。
+\end{remark}
+
+\subsection{导数与微分}
+
+\begin{definition}[可导与微分]
+设函数 \(w = f(z)\) 是区域 \(G\) 内的单值函数，如果在 \(G\) 内的某点 \(z_0\)，极限
+\[
+f'(z_0) = \lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z}
+\]
+存在，则称 \(f(z)\) 在 \(z_0\) 点可导，该极限值称为 \(f(z)\) 在 \(z_0\) 点的导数。
+与实变函数类似，若函数在此点可导，函数增量可表示为 \(\Delta w = f'(z_0)\Delta z + \rho(\Delta z)\)，其中 \(\lim_{\Delta z \to 0} \frac{\rho(\Delta z)}{\Delta z} = 0\)。把线性部分 \(f'(z_0)\Delta z\) 称为函数 \(w\) 在 \(z_0\) 点的微分，记为 \(dw = f'(z) dz\)。
+\end{definition}
+
+\begin{remark}
+导数的概念在复变函数的几何意义非常直观，对于工程应用十分重要。导数 \(f'(z)\) 刻画了映射 \(z \to w\) 的局部性质：
+\begin{enumerate}
+    \item 模 \(|f'(z)|\) 表示映射在点 \(z\) 处的伸缩率（放大倍数）；
+    \item 辐角 \(\arg f'(z)\) 表示映射在该点的旋转角。
+    \item 即 \(|dw| = |f'(z)||dz|\)，\(\arg dw = \arg f'(z) + \arg dz\)。
+\end{enumerate}
+\end{remark}
+
+\subsection{解析函数与柯西-黎曼方程}
+
+\begin{definition}[解析函数]
+在区域 \(G\) 内每一点都可导的函数，称为 \(G\) 内的解析函数。例如，\(z^2\) 和 \(e^z\) 都是全平面上的解析函数。解析性是复变函数核心的研究对象。
+\end{definition}
+
+\begin{theorem}[柯西-黎曼方程（必要条件）]
+若函数 \(f(z) = u(x, y) + \mathrm{i}v(x, y)\) 在点 \(z_0 = x_0 + \mathrm{i}y_0\) 处可导，则其实部 \(u(x,y)\) 与虚部 \(v(x,y)\) 必须满足偏导数方程：
+\[
+\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}
+\]
+这两个方程被称为柯西-黎曼方程（简称 C-R 方程）。它是复变函数可导的必要条件。\textbf{如果两函数 \(u, v\) 在点 \(z\) 可微（即存在连续的一阶偏导），且满足 C-R 方程，则该点的导数 \(f'(z)\) 必然存在。}
+\end{theorem}
+
+\begin{remark}
+从几何层面看，C-R 方程反映了 \(u(x,y)\) 和 \(v(x,y)\) 之间的深刻联系。在二维平面内，实部 \(u(x,y) = \text{常数}\) 与虚部 \(v(x,y) = \text{常数}\) 所代表的两族等值曲线是相互正交的。这意味着如果我们知道了一个解析函数的实部，就可以唯一地（相差一个实常数）确定其虚部。
+例如，已知实部 \(u(x,y) = x^2 - y^2\)，通过线积分求解 C-R 方程可求得虚部 \(v(x,y) = 2xy\)，进而得到解析函数 \(f(z) = z^2\)。
+\end{remark}
+
+\subsection{调和函数与无穷远点}
+
+\begin{definition}[调和函数]
+若一个二元实函数 \(u(x,y)\) 在某区域内存在二阶连续偏导数，且满足二维拉普拉斯方程：
+\[
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0
+\]
+则称该函数为调和函数。
+\end{definition}
+
+\begin{theorem}[共轭调和函数]
+解析函数 \(f(z) = u(x,y) + \mathrm{i}v(x,y)\) 的实部和虚部必定为调和函数。我们称满足 C-R 方程的实部和虚部是一对共轭调和函数。
+\end{theorem}
+
+\begin{remark}
+在物理领域，解析函数的实部和虚部往往具有物理意义，例如平面流体力学中的流函数和势函数，或者静电场中的电场强度和电势。由于它们满足拉普拉斯方程，因此这些问题可以通过求解二维拉普拉斯边值问题来解决。
+\end{remark}
+
+\begin{remark}[无穷远点处的解析性]
+函数在某一点是否解析，常常与其所在区域及邻域有关。为了研究复变函数在无穷远处的性质，我们需要引入无穷远点。通过作变换 \(z = \frac{1}{t}\)，可以将无穷远点 \(z = \infty\) 映射到 \(t = 0\) 点。因此，如果在变换后的 \(t = 0\) 处解析，则称原函数在无穷远点解析。如果在某点的任意邻域内均不存在解析点，则该点被称为函数的奇点。
+\end{remark}
+
+\subsection{保角变换}
+
+\begin{definition}[保角变换]
+复数解析函数 \(w = f(z)\) 代表了一个变换或映射。若在 \(z\) 平面的某个点 \(z_0\) 处满足 \(f'(z_0) \neq 0\)，则该映射在 \(z_0\) 点具有保角性。此时，称解析函数代表的映射为保角变换（或保角映射）。
+\end{definition}
+
+\begin{remark}[几何直观解释]
+导数的模 \(|f'(z_0)|\) 表征了映射在 \(z_0\) 点的伸缩率（放大或缩小倍数），而 \(\arg f'(z_0)\) 表征了映射在该点的辐角（旋转角度）。假设在 \(z\) 平面内存在两条曲线 \(l_1\) 和 \(l_2\) 相交于 \(z_0\) 点，它们在 \(w\) 平面的像曲线为 \(l'_1\) 和 \(l'_2\)。由于：
+\begin{equation*}
+\arg l'_1 = \arg l_1 + \arg f'(z_0), \quad \arg l'_2 = \arg l_2 + \arg f'(z_0)
+\end{equation*}
+因此，映射前后两条曲线的夹角保持不变，即 \(\arg(l'_1, l'_2) = \arg(l_1, l_2)\)。同时，过同一点的这两条曲线，其伸缩率相同。这种在变换下保持角度不变且伸缩率一致的特性，是保角变换的核心。
+\end{remark}
+
+\begin{remark}[非保角的特殊点]
+必须强调的是，解析函数并非处处保角。如果一个映射在某点 \(z_0\) 处满足 \(f'(z_0) = 0\)，由于此时 \(\arg f'(z_0)\) 没有定义，映射在该点的辐角变化失去了意义，因而保角性失效。在实际应用中，利用这些导数为零的点可以产生特殊的几何图案，但在需要几何保形的区域应避免使用这些点。
+\end{remark}
+
+\begin{theorem}[黎曼映射定理]
+如果复平面上的区域 \(C\) 是单连通区域，边界为简单闭曲线，那么必然存在一个解析函数 \(f(z)\)，使得 \(G\) 内的每一个点与单位圆（或另一个简单图形，如半平面）内的点一一对应。这种变换是双向单值对应的（即双射）。
+\end{theorem}
+
+\begin{remark}[工程应用与物理背景]
+保角变换在物理和工程领域具有极高的实用价值。在求解二维平面内的静电场、流体力学和热传导问题时，常常需要面对形状极其复杂的边界。通过选择合适的保角变换，可以将 \(z\) 复平面内的复杂区域（如两个不相交的偏心圆、多边形）映射为 \(w\) 平面内形状简单的基础区域（例如同心圆或标准矩形）。
+由于拉普拉斯算符 \(\nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2}\) 在保角变换下其数学表达形式也会发生相应的简化，变换后原本复杂的微分方程边值问题往往能得到大幅度的简化。将复杂图形变为简单几何形状后求解，再通过反变换映射回原物理空间，即可得到实际物理问题的精确解。
+\end{remark}
+
+\bigskip
+
+\fbox{\parbox{0.9\textwidth}{
+    结论：考虑映射$\zeta=\epsilon+i\eta=f(z)$，其中$z=x+iy$，$f(z)$为解析函数。讨论映射$(x, y)\to(\epsilon, \eta)$下
+    Laplace算子$\nabla^2=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}$的变换。
+}}
+
+\begin{proof}
+    设解析函数为 \(w = f(z)\)，其中 \(w = \xi + \mathrm{i}\eta\)，\(z = x + \mathrm{i}y\)。利用链式法则对坐标 \(x\) 求一阶偏导：
+
+\begin{equation*}
+    \frac{\partial}{\partial x} = \frac{\partial \xi}{\partial x} \frac{\partial}{\partial \xi} + \frac{\partial \eta}{\partial x} \frac{\partial}{\partial \eta}
+\end{equation*}
+
+对 \(x\) 求二阶偏导（注意此时由于算子作用，交叉项相互抵消，且 \(\xi, \eta\) 为调和函数）：
+
+\begin{equation*}
+    \frac{\partial^2}{\partial x^2} = \frac{\partial^2 \xi}{\partial x^2} \frac{\partial}{\partial \xi} + \left(\frac{\partial \xi}{\partial x}\right)^2 \frac{\partial^2}{\partial \xi^2} + \left(\frac{\partial^2 \eta}{\partial x^2}\right) \frac{\partial}{\partial \eta} + \left(\frac{\partial \eta}{\partial x}\right)^2 \frac{\partial^2}{\partial \eta^2}
+\end{equation*}
+
+同理，对坐标 \(y\) 求二阶偏导：
+
+\begin{equation*}
+    \frac{\partial^2}{\partial y^2} = \frac{\partial^2 \xi}{\partial y^2} \frac{\partial}{\partial \xi} + \left(\frac{\partial \xi}{\partial y}\right)^2 \frac{\partial^2}{\partial \xi^2} + \left(\frac{\partial^2 \eta}{\partial y^2}\right) \frac{\partial}{\partial \eta} + \left(\frac{\partial \eta}{\partial y}\right)^2 \frac{\partial^2}{\partial \eta^2}
+\end{equation*}
+
+将两式相加得到原坐标系下的拉普拉斯算子 \(\nabla_1^2\)：
+
+\begin{equation*}
+    \nabla_1^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2}
+\end{equation*}
+
+由于 \(w = f(z)\) 为解析函数，其实部 \(\xi\) 与虚部 \(\eta\) 满足柯西-黎曼 (C-R) 方程：
+
+\begin{equation*}
+    \left( \frac{\partial \xi}{\partial x} \right) = \left( \frac{\partial \eta}{\partial y} \right), \qquad \left( \frac{\partial \xi}{\partial y} \right) = - \left( \frac{\partial \eta}{\partial x} \right)
+\end{equation*}
+
+利用上述 C-R 方程进行替换和化简，消去交叉项后，将原坐标拉普拉斯算子变换为关于 \(\xi, \eta\) 的拉普拉斯算子 \(\nabla_2\)：
+
+\begin{align*}
+    \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} &= \left[ \left(\frac{\partial \xi}{\partial x}\right)^2 + \left(\frac{\partial \xi}{\partial y}\right)^2 \right] \left( \frac{\partial^2}{\partial \xi^2} + \frac{\partial^2}{\partial \eta^2} \right) \\
+    &= |f'(z)|^2 \nabla_{\epsilon, \eta}^2
+\end{align*}
+\end{proof}
+
+\subsection{多值函数与黎曼面}
+
+\begin{definition}[多值函数]
+在复变函数中存在一类函数，在区域 \(G \subset \mathbb{C}\) 中，对于复数 \(z \in G\)，有多个复数 \(w\) 与之对应，称此类函数为多值函数。多值函数通常产生于数学运算的逆过程，例如求平方根、求对数等。
+\end{definition}
+
+\begin{remark}[多值性的数学根源]
+多值性产生的根本原因在于复数辐角（\(\arg z\)）具有 \(2\pi\) 的周期性。以平方根函数 \(w = \sqrt{z-a}\) 的求逆过程为例，设 \(w = \rho e^{\mathrm{i}\phi}\)，\(z-a = r e^{\mathrm{i}\theta}\)，则有 \(w^2 = z-a\)。
+代入极坐标表达式，可得：
+\[
+\rho = \sqrt{r}, \quad \phi = \frac{\theta}{2} + n\pi, \quad n = 0, \pm 1, \pm 2, \cdots
+\]
+这表明，对于同一个 \(z\) 值，将存在正负两个 \(w\) 值与之对应，即产生多值性。类似地，反三角函数等均可转化为与根式或对数相关的多值函数。导致多值性的变量 \(z-a\) 称为该多值函数的宗量。
+\end{remark}
+
+
+\begin{definition}[分支点]
+当自变量 \(z\) 绕某一点 \(z_0\) 沿简单闭合路径（如圆）一周回到原处时，若相应的函数值 \(w\) 发生改变（不复原），则称点 \(z_0\) 为该多值函数的分支点。
+\end{definition}
+
+\begin{remark}[分支点的判定方法]
+要考察无穷远处的点 \(z = \infty\) 是否是分支点，可以通过变量代换 \(z = \frac{1}{t}\) 进行判断。若变换后的函数在 \(t = 0\) 处具有多值分支点，则 \(z = \infty\) 是原函数的分支点。例如，对于 \(w = \sqrt{z-a}\) 而言，\(z = a\) 和 \(z = \infty\) 就是其唯一的两个分支点。
+\end{remark}
+
+\begin{definition}[割线与单值分支]
+为了将多值函数当作单值函数来研究解析性质，需要限制自变量 \(z\) 的辐角变化范围。常见的做法是定义一条**割线**。
+例如，在复平面上从分支点 \(z=a\) 向右作水平延伸到 \(\infty\) 的割线，并规定割线一侧的范围为 \(0 \le \arg(z-a) < 2\pi\)。在此限制下，辐角被固定，从而 \(w\) 的值被唯一确定。这种被割线限制定义出的单值函数区域，称为多值函数的**单值分支**。
+\end{definition}
+
+\begin{remark}
+多值函数有无数个单值分支，每个单值分支在其定义域内部都是解析函数，且依然满足常规的求导法则。例如，在特定的单值分支上，有 \(\frac{d}{dz}(\ln z) = \frac{1}{z}\)。
+\end{remark}
+
+
+\begin{definition}[黎曼面]
+黎曼面是一种几何构造方法，用于将多值函数转化为几何上的单值函数。它通过将各个单值分支的复平面（平面片）按照特定的规则（割线对合）黏合在一起，构成一个多维或多叶的空间结构。
+\end{definition}
+
+\begin{remark}[构造与属性]
+以二值函数 \(w = \sqrt{z-a}\) 为例，将其第一个单值分支的割线上岸，与第二个单值分支的割线下岸黏合，就可以形成一张二叶黎曼面。在这张黎曼面上，点的移动突破了原复平面上割线的限制，复平面内的点与黎曼面上的点实现了一一对应。
+对于对数函数 \(w = \ln z\) 及其无穷多个单值分支，其黎曼面表现为无穷多叶并沿着割线呈螺旋状上升的复杂曲面。
+\end{remark}
+
+
