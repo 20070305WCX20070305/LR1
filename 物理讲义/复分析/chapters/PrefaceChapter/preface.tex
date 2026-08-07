@@ -1,0 +1,31 @@
+\chapter{序言}
+
+复变函数是《数学物理方法》这门课的重要组成部分，在数学、物理中具有深刻的意义以及广泛的应用。
+
+{\kaishu
+例如，对于绝对收敛的无穷级数：
+
+\begin{equation}
+    \sum_{n=0}^{\infty} a^n\operatorname{sin}(n\theta),\, |a|<1,\, \theta\in\mathbb{R}
+\end{equation}
+
+在直接求和十分复杂，而且需要相当多的代数技巧，但是从复变函数的角度来看，考虑复数 
+$z = a\operatorname{e}^{\operatorname{ln}a+i\theta}$，则有：
+
+\begin{equation}
+    \sum_{n=0}^{\infty} a^n\operatorname{sin}(n\theta)= \operatorname{Im}\sum_{n=0}^{\infty} z^n = \operatorname{Im}\frac{1}{1-z} = \frac{a\operatorname{sin}\theta}{1-2a\operatorname{cos}\theta+a^2}
+\end{equation}
+
+}
+
+此时计算将极其方便。当然，复变函数的应用远不止于此，本文将会在后续章节中给出更多的例子。
+
+
+“乱花渐欲迷人眼，浅草才能没马蹄”，复变函数的内容庞杂，但核心思路较为清晰，核心在于
+“留数定理”、“Fourier变换”、“Laplace变换”以及相应的数学技巧。
+本文作为笔者学习复变函数的总结，并不致力于复述复变函数或者复分析的相关教材，
+而是希望总结复变函数常见的定理定义以及相应的证明，以及在物理计算中的应用。
+对于常见的结论，本文致力于给出数学上的严谨证明，但是考虑到本文并非数学系复分析的
+只是汇总，不宜喧宾夺主，故部分证明过程会有所省略（例如关于积分一致收敛性的说明等等）。
+笔者学历尚浅，难免疏漏之处，还恳请读者批评指正。
+

@@ -51,39 +51,27 @@
 \newcommand{\dd}{\mathrm{d}}
 \newcommand{\source}[1]{\par \hfill ——#1}
 
+% ====== 快速编译 ======
+% \includeonly{path1/chapter1, path2/chapter2}
+
 % ====== 文档内容 ======
 \begin{document}
 
-% 书籍类可选前导部分（若需要可取消注释）
-% \frontmatter
-% \tableofcontents
-% \listoffigures
+% ---------- 第一部分：前置内容（不编号章节） ----------
+\frontmatter
+\include{chapters/PrefaceChapter/preface}           % 前言（如果不需要，可以删掉这一行）
+\tableofcontents            % 自动生成目录
 
-% \mainmatter
 
-% 示例章节（书籍类支持 \chapter）
-\chapter{引言}
-这是书籍类文档的示例内容。
+% ---------- 第二部分：正文主体（编号章节） ----------
+\mainmatter
 
-\section{小节}
-正文内容……
 
-\begin{definition}[戴德金分割]
-    设 ...
-\end{definition}
+% ---------- 第三部分：后置内容（附录等，不编号章节） ----------
+\backmatter
 
-\begin{theorem}[实数的完备性]
-    实数集 ...
-\end{theorem}
-
-\begin{proof}
-    证明过程 ...
-\end{proof}
-
-\begin{remark}
-    这个定理是分析学的基础。
-\end{remark}
-
-% 参考文献、附录等可后续添加
+% ---------参考文献（如果用 BibTeX 或 biblatex，通常放在这里）---------
+% \bibliographystyle{plain}
+% \bibliography{references}
 
 \end{document}
